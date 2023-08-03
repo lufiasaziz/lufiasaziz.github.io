@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0134d4">
+   
+    <!-- Title-->
+    <title>Aglo</title>
+    <!-- Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/ion.rangeSlider.min.css">
+    <link rel="stylesheet" href="css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="css/apexcharts.css">
+    <!-- Core Stylesheet-->
+    <link rel="stylesheet" href="style.css">
+    <!-- Web App Manifest-->
+    <script type="text/javascript" src="jquery.js"></script>
+    <style>
+    </style>
+
+</head>
+  <body>
+    <!-- Preloader-->
+    
+    <!-- Login Wrapper Area-->
+    <div class="login-wrapper d-flex align-items-center justify-content-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5">
+            <div class="text-center px-4"><img class="login-intro-img" src="img/bg-img/aglo1.png" alt=""></div>
+            <!-- Register Form-->
+            <h4 class="mb-3 text-center text-primary"><b>Aglo</b></h4>
+            <div class="register-form mt-4 px-4">
+              <h6 class="mb-3 text-center text-dark"><b>Log in</b></h6>
+              <form action="/page-home.html" method="post" id="submit">
+                <div class="form-group">
+                  <div class="input_field">
+                    <input class="input form-control" type="text" placeholder="Username" id="input_text">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input_field">
+                    <input class="input form-control" type="password" placeholder="Enter Password" id="input_password">
+                  </div>
+                </div>
+                <br>
+               
+               <div class="input_wrap">
+                <span class="error_msg text-danger" >Username Atau Passwrd salah, Ulangi lagi</span>
+                <hr>
+                <div class="mb-3 text-center">
+                  <button class="btn btn-primary w-50" type="submit" value="Sign in" id="login_btn">sign in</button>
+                 </div>
+               </div>
+              </form>
+            </div>
+            <!-- Login Meta-->
+            <div class="login-meta-data text-center"><a class="stretched-link forgot-password d-block mt-3 mb-1" href="page-forget-password.html">Forgot Password?</a>
+              <p class="mb-0">Didn't have an account? <a class="stretched-link" href="page-register.html">Register Now</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Validaion-->
+    <script>
+      var input_text = document.querySelector('#input_text');
+      var input_password = document.querySelector('#input_password');
+      var error_msg = document.querySelector(".error_msg");
+
+      $('#submit').submit(function (e) {
+        e.preventDefault();
+
+        if (input_text.value.length < 1) {
+          error_msg.style.display = "inline-block";
+          input_text.style.border = "1px solid #f74040";
+          return false;
+        }
+
+        if (input_password.value.length < 1) {
+          error_msg.style.display = "inline-block";
+          input_password.style.border = "1px solid #f74040";
+          return false;
+        }
+
+        error_msg.style.display = "none";
+        alert("success");
+        location.replace('page-home.html');
+
+      });
+
+      var input_field = document.querySelectorAll("input");
+
+      input_field.forEach(function (input_item){
+        input_item.addEventListener("input", function() {
+          
+          if (input_text.value.length > 0) {
+              input_text.style.border = "1px solid #1dbf73";
+          }
+
+          if (input_password.value.length > 0) {
+              input_password.style.border = "1px solid #1dbf73";
+        }
+
+        })
+      })
+    </script>
+  </body>
+
+</html>
